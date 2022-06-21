@@ -1,11 +1,12 @@
-const {createUser} = require('../service/user.service')
+const {createUSer} = require('../service/user.service')
 class UserController {
     //注册
     async register(ctx,text) {
         //获取数据
         const {user_name,password} = ctx.request.body
+        console.log(user_name,password)
         //操作数据库
-        // const res = await createUser(user_name,password)
+        const res = await createUSer(user_name,password)
         //返回结果
         ctx.body = ctx.request.body
     }

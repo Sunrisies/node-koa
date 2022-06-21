@@ -8,13 +8,10 @@ const {
     MYSQL_DB,
   } = require('../config/config.default')
 
-
 const seq = new Sequelize(MYSQL_DB,MYSQL_USER,MYSQL_PWD,{
     host: MYSQL_HOST,
     dialect:'mysql'
 })
-
-
 //测试连接数据库
 seq
   .authenticate()
@@ -22,7 +19,7 @@ seq
     console.log('数据库连接成功')
   })
   .catch((err) => {
-    console.log('数据库连接失败', err)
+    console.log('数据库连接失败',err)
   })
 
 module.exports = seq
